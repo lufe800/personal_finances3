@@ -32,7 +32,8 @@ def on_startup():
 @app.get("/")
 def read_root():
     return {
-                "message": "Hello Word",
+                "message": "ADSO 2670586",
+                "autor" :"Luisa Agudelo"
                 
             }
     
