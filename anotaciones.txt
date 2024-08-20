@@ -1,0 +1,31 @@
+
+---CODIGO ANTES DE CREAR EL MODELO CON pydantic
+
+@app.post('/movies/',tags=['Movies'])
+def create_movie(
+    id: int = Body(),
+    title: str = Body(),
+    overview: str  = Body(),
+    year: int  = Body(),
+    rating: float  = Body(),
+    category: str  = Body(), 
+):
+    movies.append({
+    "id": id,
+    "title": title,
+    "overview": overview,
+    "year": year,
+    "rating": rating,
+    "category": category    
+    })
+    print(movies)
+    return title
+
+    --- Con pydantic se crea la clase Movie y esto ayuda a que la validación de los datos
+    se simplifiquen porque ya heredan de la clase model y quedaria de la siguiente manera
+
+    @app.post('/movies/',tags=['Movies'])
+    def create_movie(movie:Movie):
+    movies.append(movie)
+    print(movies)
+    return movie.title
