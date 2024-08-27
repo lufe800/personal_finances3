@@ -3,7 +3,7 @@ from appv1.schemas.user import ResponseLoggin, UserLoggin
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from appv1.crud.users import get_user_by_email, get_user_by_id
-from core.security import create_access_token, verify_password,verify_token, access_token
+from core.security import create_access_token, verify_password,verify_token
 from db.database import get_db
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
